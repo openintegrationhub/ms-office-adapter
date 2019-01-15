@@ -1,0 +1,32 @@
+{
+    "title": "Microsoft Graph Adapter",
+    "description": "Microsoft Graph Adapter for Open Integration Hub (Proof of Concept).",
+    "docsUrl": "https://agindo.de/",
+    "credentials":
+    {
+        "fields":
+        {
+            "apiKey":
+            {
+                "label": "API-Key",
+                "required": true,
+                "viewClass": "TextFieldWithNoteView",
+                "note": "Microsoft Graph API-Key."
+            }
+        }
+    },
+    "triggers":
+    {
+        "getProfile":
+        {
+            "main": "./lib/triggers/getProfile.js",
+            "type": "polling",
+            "description": "Get own profile data stored in Microsoft Graph.",
+            "title": "Get own profile",
+            "metadata":
+            {
+                "out": "./lib/schemas/getProfile.out.json"
+            }
+        }
+    }
+}
