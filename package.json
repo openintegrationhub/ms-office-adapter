@@ -1,10 +1,9 @@
 {
-    "name": "Microsoft Graph Adapter",
+    "name": "MicrosoftGraphAdapter",
     "version": "0.0.1",
     "description": "Microsoft Graph Adapter for Open Integration Hub (Proof of Concept).",
     "author": "agindo GmbH",
-    "dependencies":
-    {
+    "dependencies": {
         "elasticio-node": "0.0.8",
         "request-promise": "4.1.1"
     }
