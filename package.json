@@ -5,6 +5,8 @@
     "author": "agindo GmbH",
     "dependencies": {
         "elasticio-node": "0.0.8",
-        "request-promise": "4.1.1"
+        "request": "^2.88.0",
+        "request-promise": "4.1.1",
+        "elasticio-sailor-nodejs": "^2.3.0"
     }
 }
