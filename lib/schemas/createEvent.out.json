@@ -1,0 +1,36 @@
+{
+    "type": "object",
+    "properties":
+    {
+        "@odata.context":
+        {
+            "type": "string",
+            "required": false,
+            "title": "dataContext"
+        },
+        "value":
+        {
+            "type": "array",
+            "required": false,
+            "title": "value"
+        },
+        "subject":
+        {
+            "type": "string",
+            "required": false,
+            "title": "subject"
+        },
+        "start":
+        {
+            "type": "string",
+            "required": false,
+            "title": "start"
+        },
+        "end":
+        {
+            "type": "string",
+            "required": false,
+            "title": "end"
+        }
+    }
+}

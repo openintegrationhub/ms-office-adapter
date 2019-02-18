@@ -1,0 +1,60 @@
+{
+    "type": "object",
+    "properties":
+    {
+        "@odata.context":
+        {
+            "type": "string",
+            "required": false,
+            "title": "dataContext"
+        },
+        "createdDateTime":
+        {
+            "type": "string",
+            "required": false,
+            "title": "createdDateTime"
+        },
+        "lastModifiedDateTime":
+        {
+            "type": "string",
+            "required": false,
+            "title": "lastModifiedDateTime"
+        },
+        "displayName":
+        {
+            "type": "string",
+            "required": false,
+            "title": "displayName"
+        },
+        "companyName":
+        {
+            "type": "string",
+            "required": false,
+            "title": "companyName"
+        },
+        "businessPhones":
+        {
+            "type": "string",
+            "required": false,
+            "title": "businessPhones"
+        },
+        "emailAddresses":
+        {
+            "type": "string",
+            "required": false,
+            "title": "emailAddresses"
+        },
+        "homeAddress":
+        {
+            "type": "string",
+            "required": false,
+            "title": "homeAddress"
+        },
+        "businessAddress":
+        {
+            "type": "string",
+            "required": false,
+            "title": "businessAddress"
+        }
+    }
+}

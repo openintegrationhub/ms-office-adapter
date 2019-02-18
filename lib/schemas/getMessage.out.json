@@ -1,0 +1,66 @@
+{
+    "type": "object",
+    "properties":
+    {
+        "@odata.context":
+        {
+            "type": "string",
+            "required": false,
+            "title": "dataContext"
+        },
+        "createdDateTime":
+        {
+            "type": "string",
+            "required": false,
+            "title": "createdDateTime"
+        },
+        "receivedDateTime":
+        {
+            "type": "string",
+            "required": false,
+            "title": "receivedDateTime"
+        },
+        "sentDateTime":
+        {
+            "type": "string",
+            "required": false,
+            "title": "sentDateTime"
+        },
+        "subject":
+        {
+            "type": "string",
+            "required": false,
+            "title": "subject"
+        },
+        "body":
+        {
+            "type": "string",
+            "required": false,
+            "title": "body"
+        },
+        "sender":
+        {
+            "type": "string",
+            "required": false,
+            "title": "sender"
+        },
+        "from":
+        {
+            "type": "string",
+            "required": false,
+            "title": "from"
+        },
+        "toRecipients":
+        {
+            "type": "string",
+            "required": false,
+            "title": "toRecipients"
+        },
+        "ccRecipients":
+        {
+            "type": "string",
+            "required": false,
+            "title": "ccRecipients"
+        }
+    }
+}
