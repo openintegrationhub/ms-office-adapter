@@ -1,5 +1,5 @@
 {
-    "title": "Microsoft Graph Adapter",
+    "title": "MicrosoftGraphAdapter",
     "description": "Microsoft Graph Adapter for Open Integration Hub (Proof of Concept).",
     "docsUrl": "https://agindo.de/",
     "credentials":
