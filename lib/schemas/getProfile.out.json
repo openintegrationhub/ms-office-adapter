@@ -2,7 +2,7 @@
     "type": "object",
     "properties":
     {
-        "@odata.context":
+        "odataContext":
         {
             "type": "string",
             "required": false,
