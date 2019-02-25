@@ -1,32 +1,29 @@
-"use strict";
+const MicrosoftGraph = require("msgraph-sdk-javascript");
 
-const request = require("request-promise");
+const co = require("co");
 
-module.exports = verify;
-
-function verify(credentials)
+module.exports = function verifyCredentials(credentials, cb)
 {
-    const apiKey = credentials.apiKey;
-
-    if (!apiKey)
-    {
-        throw new Error("API-Key missing.");
-    }
-
-    const requestOptions =
-    {
-        uri: "https://graph.microsoft.com/v1.0/me/",
-
-        headers:
+    var client = MicrosoftGraph.init
+    ({
+        defaultVersion: "v1.0",
+        debugLogging: false,
+        authProvider: (done) =>
         {
-            // Authorization: Bearer eyJ0eXAiO ... 0X2tnSQLEANnSPHY0gKcgw
-            // https://docs.microsoft.com/en-us/graph/auth-v2-service
+            done(null, credentials.oauth.access_token);
+        }
+    });
 
-            "Authorization": "Bearer " + apiKey
-        },
+    var process = co(function*()
+    {
+        var user = yield client.api("/me").get();
+    });
 
-        json: true
-    };
-
-    return request.get(requestOptions);
-}
+    process.then(function ()
+    {
+        cb(null, {verified: true});
+    }).catch(err =>
+    {
+        cb(null, {verified: false});
+    });
+};

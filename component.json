@@ -1,32 +1,221 @@
 {
-    "title": "MicrosoftGraphAdapter",
-    "description": "Microsoft Graph Adapter for Open Integration Hub (Proof of Concept).",
-    "docsUrl": "https://agindo.de/",
-    "credentials":
+  "title": "Microsoft Graph Adapter",
+  "description": "Microsoft Graph Adapter for Open Integration Hub (based on https://github.com/elasticio/outlook/).",
+  "envVars":
+  {
+    "MSAPP_CLIENT_ID":
     {
-        "fields":
-        {
-            "apiKey":
-            {
-                "label": "API-Key",
-                "required": true,
-                "viewClass": "TextFieldWithNoteView",
-                "note": "Microsoft Graph API-Key."
-            }
-        }
+      "required": true,
+      "description": ""
     },
-    "triggers":
+    "MSAPP_CLIENT_SECRET":
     {
-        "getProfile":
-        {
-            "main": "./lib/triggers/getProfile.js",
-            "type": "polling",
-            "description": "Get own profile data stored in Microsoft Graph.",
-            "title": "Get own profile",
-            "metadata":
-            {
-                "out": "./lib/schemas/getProfile.out.json"
-            }
-        }
+      "required": true,
+      "description": ""
     }
+  },
+  "credentials":
+  {
+    "fields":
+    {
+      "oauth":
+      {
+        "label": "Authentication",
+        "viewClass": "OAuthFieldView",
+        "required": true
+      }
+    },
+    "oauth2":
+    {
+      "client_id": "{{MSAPP_CLIENT_ID}}",
+      "client_secret": "{{MSAPP_CLIENT_SECRET}}",
+      "auth_uri": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
+      "token_uri": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
+      "scopes":
+      [
+        "openid",
+        "offline_access",
+        "User.Read",
+        "Contacts.Read",
+        "Profile",
+        "Calendars.ReadWrite"
+      ]
+    }
+  },
+  "triggers":
+  {
+    "getContacts":
+    {
+      "title": "Contacts",
+      "main": "./lib/triggers/contacts.js",
+      "type": "polling",
+      "metadata":
+      {
+        "in": {},
+        "out": "./lib/schemas/contacts.out.json"
+      }
+    }
+  },
+  "actions":
+  {
+    "checkAvailability":
+    {
+      "title": "checkAvailability",
+      "main": "./lib/actions/checkAvailability.js",
+      "metadata":
+      {
+        "in": "./lib/schemas/checkAvailability.in.json",
+        "out": "./lib/schemas/checkAvailability.out.json"
+      }
+    },
+    "findNextAvailableTime":
+    {
+      "title": "findNextAvailableTime",
+      "main": "./lib/actions/findNextAvailableTime.js",
+      "metadata":
+      {
+        "in": "./lib/schemas/findNextAvailableTime.in.json",
+        "out": "./lib/schemas/findNextAvailableTime.out.json"
+      }
+    },
+    "createEvent":
+    {
+      "title": "createEvent",
+      "main": "./lib/actions/createEvent.js",
+      "fields":
+      {
+        "calendarId":
+        {
+          "viewClass": "SelectView",
+          "prompt": "Select a Calendar",
+          "label": "Calendar",
+          "required": true,
+          "model": "getCalendars"
+        },
+        "timeZone":
+        {
+          "viewClass": "SelectView",
+          "prompt": "Select Event Timezone",
+          "label": "Time Zone",
+          "required": true,
+          "model":
+          {
+            "Europe/Berlin": "Europe/Berlin",
+            "Europe/Bucharest": "Europe/Bucharest",
+            "Europe/Budapest": "Europe/Budapest",
+            "Europe/Istanbul": "Europe/Istanbul",
+            "Europe/Kaliningrad": "Europe/Kaliningrad",
+            "Europe/Kiev": "Europe/Kiev",
+            "Europe/London": "Europe/London",
+            "Europe/Moscow": "Europe/Moscow",
+            "Europe/Paris": "Europe/Paris",
+            "Europe/Warsaw": "Europe/Warsaw"
+          }
+        },
+        "importance":
+        {
+          "viewClass": "SelectView",
+          "prompt": "Select Event Importance",
+          "label": "Importance",
+          "required": false,
+          "model":
+          {
+            "Low": "Low",
+            "Normal": "Normal",
+            "High": "High"
+          }
+        },
+        "showAs":
+        {
+          "viewClass": "SelectView",
+          "prompt": "Select Show As value",
+          "label": "Show As",
+          "required": false,
+          "model":
+          {
+            "Free": "Free",
+            "Tentative": "Tentative",
+            "Busy": "Busy",
+            "Oof": "Out of Office",
+            "WorkingElsewhere": "Working Elsewhere",
+            "Unknown": "Unknown"
+          }
+        },
+        "sensitivity":
+        {
+          "viewClass": "SelectView",
+          "prompt": "Select Event Sensitivity",
+          "label": "Sensitivity",
+          "required": false,
+          "model":
+          {
+            "Normal": "Normal",
+            "Personal": "Personal",
+            "Private": "Private",
+            "Confidential": "Confidential"
+          }
+        },
+        "bodyContentType":
+        {
+          "viewClass": "SelectView",
+          "prompt": "Select Event Body Content Type",
+          "label": "Body Content Type",
+          "required": false,
+          "model":
+          {
+            "Text": "Text",
+            "HTML": "HTML"
+          }
+        },
+        "isAllDay":
+        {
+          "label": "All Day Event",
+          "viewClass": "CheckBoxView"
+        }
+      },
+      "metadata":
+      {
+        "in": "./lib/schemas/createEvent.in.json",
+        "out": "./lib/schemas/createEvent.out.json"
+      }
+    },
+    "addContact":
+    {
+      "title": "addContact",
+      "main": "./lib/actions/addContact.js",
+      "fields":
+      {
+        "displayName": "displayName",
+        "companyName": "companyName",
+        "businessPhones": "businessPhones",
+        "emailAddresses": "emailAddresses",
+        "homeAddress": "homeAddress",
+        "businessAddress": "businessAddress"
+      },
+      "metadata":
+      {
+        "in": "./lib/schemas/getContact.in.json",
+        "out": "./lib/schemas/addContact.out.json"
+      }
+    },
+    "getMessage":
+    {
+      "title": "getMessage",
+      "main": "./lib/actions/getMessage.js",
+      "fields":
+      {
+        "receivedDateTime": "receivedDateTime",
+        "sentDateTime": "sentDateTime",
+        "subject": "subject",
+        "body": "body",
+        "sender": "sender",
+        "from": "from"
+      },
+      "metadata":
+      {
+        "in": "./lib/schemas/getMessage.in.json",
+        "out": "./lib/schemas/getMessage.out.json"
+      }
+    }
+  }
 }
