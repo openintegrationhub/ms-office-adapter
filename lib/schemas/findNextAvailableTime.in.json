@@ -1,16 +1,1 @@
-{
-    "type": "object",
-    "required": false,
-    "properties": {
-        "time": {
-            "type": "string",
-            "required": false,
-            "title": "Time"
-        },
-        "subject": {
-            "type": "string",
-            "required": false,
-            "title": "Subject"
-        }
-    }
-}
+ 
