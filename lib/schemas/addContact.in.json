@@ -1,0 +1,50 @@
+{
+    "type": "object",
+    "properties":
+    {
+        "companyName":
+        {
+            "type": "string",
+            "required": false,
+            "title": "companyName"
+        },
+        "surname":
+        {
+            "type": "string",
+            "required": false,
+            "title": "surname"
+        },
+        "givenName":
+        {
+            "type": "string",
+            "required": false,
+            "title": "givenName"
+        },
+        "emailAddresses":
+        {
+            "type": "object",
+            "required": false,
+            "properties":
+            {
+                "address":
+                {
+                    "type": "string",
+                    "required": false,
+                    "title":"address"
+                },
+                "name":
+                {
+                    "type": "string",
+                    "required": false,
+                    "title":"name"
+                }
+            }
+        },
+        "businessPhones":
+        {
+            "type": "object",
+            "required": false,
+            "title": "businessPhones"
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "required": false,
+    "properties":
+    {
+        "time":
+        {
+            "type": "string",
+            "required": false,
+            "title": "Time"
+        }
+    }
+}
