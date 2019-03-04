@@ -20,10 +20,10 @@
     "surname": "Max",
     "givenName": "Mustermann",
     "emailAddresses":
-    [
+    {
         "name": "Max Mustermann",
         "address": "max.mustermann@agindo-software.de"
-    ],
+    },
     "businessPhones":
     [
         "+49 228 123 456"
