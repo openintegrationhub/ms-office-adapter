@@ -21,8 +21,8 @@
     "givenName": "Mustermann",
     "emailAddresses":
     [
-        "address": "max.mustermann@agindo-software.de",
-        "name": "Max Mustermann"
+        "name": "Max Mustermann",
+        "address": "max.mustermann@agindo-software.de"
     ],
     "businessPhones":
     [
