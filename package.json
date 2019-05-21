@@ -8,6 +8,9 @@
     "lib"
   ],
   "main": "lib/index.js",
+  "scripts": {
+    "start": "node ./node_modules/elasticio-sailor-nodejs/run.js"
+  },
   "dependencies": {
     "bluebird": "^3.5.4",
     "co": "^4.6.0",
