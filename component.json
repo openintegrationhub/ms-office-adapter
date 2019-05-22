@@ -36,7 +36,7 @@
         "openid",
         "offline_access",
         "User.Read",
-        "Contacts.Read",
+        "Contacts.ReadWrite",
         "Profile",
         "Calendars.ReadWrite"
       ]
@@ -73,19 +73,6 @@
     {
       "title": "addContact",
       "main": "./lib/actions/addContact.js",
-      "fields":
-      {
-        "companyName": "companyName",
-        "surname": "surname",
-        "givenName": "givenName",
-        "address": "address",
-        "emailAddresses":
-        {
-          "address": "address",
-          "name": "name"
-        },
-        "businessPhones": "businessPhones"
-      },
       "metadata":
       {
         "in": "./lib/schemas/addContact.in.json",
@@ -96,10 +83,6 @@
     {
       "title": "checkEvents",
       "main": "./lib/actions/checkEvents.js",
-      "fields":
-      {
-        "time": "time"
-      },
       "metadata":
       {
         "in": "./lib/schemas/checkEvents.in.json",
@@ -110,97 +93,6 @@
     {
       "title": "createEvent",
       "main": "./lib/actions/createEvent.js",
-      "fields":
-      {
-        "calendarId":
-        {
-          "viewClass": "SelectView",
-          "prompt": "Select a Calendar",
-          "label": "Calendar",
-          "required": true,
-          "model": "getCalendars"
-        },
-        "timeZone":
-        {
-          "viewClass": "SelectView",
-          "prompt": "Select Event Timezone",
-          "label": "Time Zone",
-          "required": true,
-          "model":
-          {
-            "Europe/Berlin": "Europe/Berlin",
-            "Europe/Bucharest": "Europe/Bucharest",
-            "Europe/Budapest": "Europe/Budapest",
-            "Europe/Istanbul": "Europe/Istanbul",
-            "Europe/Kaliningrad": "Europe/Kaliningrad",
-            "Europe/Kiev": "Europe/Kiev",
-            "Europe/London": "Europe/London",
-            "Europe/Moscow": "Europe/Moscow",
-            "Europe/Paris": "Europe/Paris",
-            "Europe/Warsaw": "Europe/Warsaw"
-          }
-        },
-        "importance":
-        {
-          "viewClass": "SelectView",
-          "prompt": "Select Event Importance",
-          "label": "Importance",
-          "required": false,
-          "model":
-          {
-            "Low": "Low",
-            "Normal": "Normal",
-            "High": "High"
-          }
-        },
-        "showAs":
-        {
-          "viewClass": "SelectView",
-          "prompt": "Select Show As value",
-          "label": "Show As",
-          "required": false,
-          "model":
-          {
-            "Free": "Free",
-            "Tentative": "Tentative",
-            "Busy": "Busy",
-            "Oof": "Out of Office",
-            "WorkingElsewhere": "Working Elsewhere",
-            "Unknown": "Unknown"
-          }
-        },
-        "sensitivity":
-        {
-          "viewClass": "SelectView",
-          "prompt": "Select Event Sensitivity",
-          "label": "Sensitivity",
-          "required": false,
-          "model":
-          {
-            "Normal": "Normal",
-            "Personal": "Personal",
-            "Private": "Private",
-            "Confidential": "Confidential"
-          }
-        },
-        "bodyContentType":
-        {
-          "viewClass": "SelectView",
-          "prompt": "Select Event Body Content Type",
-          "label": "Body Content Type",
-          "required": false,
-          "model":
-          {
-            "Text": "Text",
-            "HTML": "HTML"
-          }
-        },
-        "isAllDay":
-        {
-          "label": "All Day Event",
-          "viewClass": "CheckBoxView"
-        }
-      },
       "metadata":
       {
         "in": "./lib/schemas/createEvent.in.json",
