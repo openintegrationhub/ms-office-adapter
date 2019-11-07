@@ -11,11 +11,15 @@
   "scripts": {
     "start": "node ./node_modules/elasticio-sailor-nodejs/run.js"
   },
+  "engines": {
+    "node": "8.16.2",
+    "npm": ">=5.4"
+  },
   "dependencies": {
     "bluebird": "^3.5.4",
     "co": "^4.6.0",
     "elasticio-node": "0.0.9",
-    "elasticio-sailor-nodejs": "^2.2.5",
+    "elasticio-sailor-nodejs": "2.2.1",
     "lodash": "^4.17.2",
     "moment": "^2.1.16",
     "moment-timezone": "^0.5.25",
