@@ -20,7 +20,7 @@
     "co": "^4.6.0",
     "elasticio-node": "0.0.9",
     "elasticio-sailor-nodejs": "2.2.1",
-    "lodash": "^4.17.2",
+    "lodash": "^4.17.13",
     "moment": "^2.1.16",
     "moment-timezone": "^0.5.25",
     "msgraph-sdk-javascript": "^0.3.1",
