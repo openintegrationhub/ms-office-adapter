@@ -7,7 +7,8 @@
 1. register your app at https://portal.azure.com/
 2. set redirect uri to https://app.elastic.io/callback/oauth2
 3. set permissions **user.read, email, offline_access, openid, profile**
-4. set environment variables on elastic.io **MSAPP_CLIENT_ID, MSAPP_CLIENT_SECRET**
+4. set register secret in secret service
+5. add secret to flow step
 
 ## Actions
 
