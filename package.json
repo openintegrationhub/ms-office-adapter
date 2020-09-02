@@ -1,6 +1,6 @@
 {
   "name": "ms-graph-adapter",
-  "version": "1.1.10",
+  "version": "1.1.11",
   "description": "Microsoft Graph Adapter for Open Integration Hub (based on https://github.com/elasticio/outlook/).",
   "homepage": "https://agindo.de/",
   "author": "elastic.io GmbH <info@elastic.io> (https://www.elastic.io/), agindo GmbH <info@agindo.de> (https://agindo.de/)",
