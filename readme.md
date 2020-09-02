@@ -13,6 +13,7 @@
 ## Actions
 
 ### 'addContact' (adds new contact) makes POST-request to https://graph.microsoft.com/v1.0/me/contacts
+### If the entry has a category it will instead post the contact in a contact folder with the same name as the category
 
 **Request:**
 ```json
@@ -220,6 +221,21 @@
 ```
 
 ## Triggers
+
+### 'getContacts' (reads changed contacts or all if no snapshot exists) makes GET-request to https://graph.microsoft.com/v1.0/me/contacts and request for all existent contact folders
+
+**Response:**
+```json
+{
+    "contacts":
+    {
+        "id": "1",
+        "createdDateTime": "2019-03-01T08:15:45Z",
+        "lastModifiedDateTime": "2019-03-01T08:15:45Z",
+        "companyName": "agindo GmbH & Co. KG",
+        "displayName": "Max Mustermann"
+    }
+}
 
 ### 'contacts' (reads changed contacts) makes GET-request to https://graph.microsoft.com/v1.0/me/contacts
 
