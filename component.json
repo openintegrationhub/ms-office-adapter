@@ -46,7 +46,7 @@
   {
     "getContacts":
     {
-      "title": "contacts",
+      "title": "getContacts",
       "main": "./lib/triggers/getContacts.js",
       "type": "polling",
       "metadata":
