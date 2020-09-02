@@ -44,6 +44,17 @@
   },
   "triggers":
   {
+    "getContacts":
+    {
+      "title": "contacts",
+      "main": "./lib/triggers/getContacts.js",
+      "type": "polling",
+      "metadata":
+      {
+        "in": {},
+        "out": "./lib/schemas/contacts.out.json"
+      }
+    },
     "contacts":
     {
       "title": "contacts",
