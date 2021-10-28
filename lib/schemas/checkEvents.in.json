@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "current_time": {
+            "required": true,
+            "type": "date"
+        }
+    }
+}
