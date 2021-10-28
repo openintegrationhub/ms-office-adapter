@@ -1,0 +1,34 @@
+{
+  "type": "object",
+  "properties": {
+    "companyName": {
+      "type": "string",
+      "example": "Test GmbH"
+    },
+    "surname": {
+      "type": "string",
+      "example": "Max"
+    },
+    "givenName": {
+      "type": "string",
+      "example": "Mustermann"
+    },
+    "emailAddresses": {
+      "name": {
+        "type": "string",
+        "example": "Max Mustermann"
+      },
+      "address": {
+        "type": "string",
+        "example": "max.mustermann@agindo-software.de"
+      }
+    },
+    "businessPhones": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "example": "+49 228 123 456"
+      }
+    }
+  }
+}
