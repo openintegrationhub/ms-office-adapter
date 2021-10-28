@@ -1,38 +1,30 @@
 {
   "title": "Microsoft Graph Adapter",
   "description": "Microsoft Graph Adapter for Open Integration Hub (based on https://github.com/elasticio/outlook/).",
-  "envVars":
-  {
-    "MSAPP_CLIENT_ID":
-    {
+  "envVars": {
+    "MSAPP_CLIENT_ID": {
       "required": true,
       "description": ""
     },
-    "MSAPP_CLIENT_SECRET":
-    {
+    "MSAPP_CLIENT_SECRET": {
       "required": true,
       "description": ""
     }
   },
-  "credentials":
-  {
-    "fields":
-    {
-      "oauth":
-      {
+  "credentials": {
+    "fields": {
+      "oauth": {
         "label": "Authentication",
         "viewClass": "OAuthFieldView",
         "required": true
       }
     },
-    "oauth2":
-    {
+    "oauth2": {
       "client_id": "{{MSAPP_CLIENT_ID}}",
       "client_secret": "{{MSAPP_CLIENT_SECRET}}",
       "auth_uri": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
       "token_uri": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
-      "scopes":
-      [
+      "scopes": [
         "openid",
         "offline_access",
         "User.Read",
@@ -42,70 +34,56 @@
       ]
     }
   },
-  "triggers":
-  {
-    "getContacts":
-    {
+  "triggers": {
+    "getContacts": {
       "title": "getContacts",
       "main": "./lib/triggers/getContacts.js",
       "type": "polling",
-      "metadata":
-      {
+      "metadata": {
         "in": {},
-        "out": "./lib/schemas/contacts.out.json"
+        "out": "./lib/schemas/getContactFolders.out.json"
       }
     },
-    "contacts":
-    {
+    "contacts": {
       "title": "contacts",
       "main": "./lib/triggers/contacts.js",
       "type": "polling",
-      "metadata":
-      {
+      "metadata": {
         "in": {},
-        "out": "./lib/schemas/contacts.out.json"
+        "out": "./lib/schemas/getContacts.out.json"
       }
     },
-    "messages":
-    {
+    "messages": {
       "title": "messages",
       "main": "./lib/triggers/messages.js",
       "type": "polling",
-      "metadata":
-      {
+      "metadata": {
         "in": {},
-        "out": "./lib/schemas/messages.out.json"
+        "out": "./lib/schemas/getMessages.out.json"
       }
     }
   },
-  "actions":
-  {
-    "addContact":
-    {
+  "actions": {
+    "addContact": {
       "title": "addContact",
       "main": "./lib/actions/addContact.js",
-      "metadata":
-      {
+      "metadata": {
         "in": "./lib/schemas/addContact.in.json",
         "out": "./lib/schemas/addContact.out.json"
       }
     },
-    "checkEvents":
-    {
+    "checkEvents": {
       "title": "checkEvents",
       "main": "./lib/actions/checkEvents.js",
-      "metadata":
-      {
+      "metadata": {
         "in": "./lib/schemas/checkEvents.in.json",
         "out": "./lib/schemas/checkEvents.out.json"
       }
     },
-    "createEvent":
-    {
+    "createEvent": {
       "title": "createEvent",
       "main": "./lib/actions/createEvent.js",
-      "metadata":
-      {
+      "metadata": {
         "in": "./lib/schemas/createEvent.in.json",
         "out": "./lib/schemas/createEvent.out.json"
       }
