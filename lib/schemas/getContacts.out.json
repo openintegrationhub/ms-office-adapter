@@ -1,0 +1,39 @@
+{
+    "type": "object",
+    "properties": {
+      "contacts": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "parentFolderId": {
+              "type": "string",
+              "example": "parentFolderId-value"
+            },
+            "birthday": {
+              "type": "string",
+              "format": "date",
+              "example": "2016-10-19T10:37:00Z"
+            },
+            "fileAs": {
+              "type": "string",
+              "example": "fileAs-value"
+            },
+            "displayName": {
+              "type": "string",
+              "example": "displayName-value"
+            },
+            "givenName": {
+              "type": "string",
+              "example": "givenName-value"
+            },
+            "initials": {
+              "type": "string",
+              "example": "initials-value"
+            }
+          }
+        }
+      }
+    }
+  }
+  

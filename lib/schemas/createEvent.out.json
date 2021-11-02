@@ -1,0 +1,194 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "example": "Test-Event"
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date",
+      "example": "2019-03-01T03:00:50.7579581Z"
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "format": "date",
+      "example": "2019-03-01T03:00:51.245372Z"
+    },
+    "originalStartTimeZone": {
+      "type": "string",
+      "example": "Pacific Standard Time"
+    },
+    "originalEndTimeZone": {
+      "type": "string",
+      "example": "Pacific Standard Time"
+    },
+    "reminderMinutesBeforeStart": {
+      "type": "string",
+      "example": "15"
+    },
+    "isReminderOn": {
+      "type": "boolean",
+      "example": true
+    },
+    "subject": {
+      "type": "string",
+      "example": "Test-Event"
+    },
+    "bodyPreview": { "type": "string", "example": "Lorem ipsum" },
+    "importance": { "type": "string", "example": "normal" },
+    "sensitivity": { "type": "string", "example": "normal" },
+
+    "isAllDay": {
+      "type": "boolean",
+      "example": false
+    },
+    "isCancelled": {
+      "type": "boolean",
+      "example": false
+    },
+    "isOrganizer": {
+      "type": "boolean",
+      "example": true
+    },
+    "responseRequested": {
+      "type": "boolean",
+      "example": true
+    },
+    "seriesMasterId": { "type": "string", "example": "3217931" },
+    "showAs": { "type": "string", "example": "busy" },
+    "type": { "type": "string", "example": "singleIntance" },
+    "responseStatus": {
+      "type": "object",
+      "properties": {
+        "response": {
+          "type": "string",
+          "example": "organizer"
+        },
+        "time": {
+          "type": "string",
+          "format": "date",
+          "example": "0001-01-01T00:00:00Z"
+        }
+      }
+    },
+
+    "body": {
+      "type": "object",
+      "properties": {
+        "contentType": {
+          "type": "HTML",
+          "example": "Test-Event"
+        },
+        "content": {
+          "type": "string",
+          "example": "<html><head></head><body>Lorem ipsum.</body></html>"
+        }
+      }
+    },
+    "start": {
+      "type": "object",
+      "properties": {
+        "dateTime": {
+          "type": "string",
+          "format": "date",
+          "example": "2019-03-01T12:00:00"
+        },
+        "timeZone": {
+          "type": "string",
+          "example": "Pacific Standard Time"
+        }
+      }
+    },
+    "end": {
+      "type": "object",
+      "properties": {
+        "dateTime": {
+          "type": "string",
+          "format": "date",
+          "example": "2019-03-01T12:00:00"
+        },
+        "timeZone": {
+          "type": "string",
+          "example": "Pacific Standard Time"
+        }
+      }
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": "string",
+          "example": "agindo GmbH"
+        },
+        "locationType": {
+          "type": "string",
+          "example": "default"
+        },
+        "uniqueId": {
+          "type": "string",
+          "example": "agindo GmbH"
+        },
+        "uniqueIdType": {
+          "type": "string",
+          "example": "private"
+        }
+      }
+    },
+    "locations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "displayName": {
+            "type": "string",
+            "example": "agindo GmbH"
+          },
+          "locationType": {
+            "type": "string",
+            "example": "default"
+          },
+          "uniqueIdType": {
+            "type": "string",
+            "example": "private"
+          }
+        }
+      }
+    },
+    "attendees": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "emailAddress": {
+            "type": "object",
+            "properties": {
+              "address": {
+                "type": "string",
+                "example": "max.mustermann@agindo-software.de"
+              },
+              "name": { "type": "string", "example": "Max Mustermann" }
+            }
+          },
+          "type": "required"
+        }
+      }
+    },
+    "organizer": {
+      "type": "object",
+      "properties": {
+        "emailAddress": {
+          "type": "object",
+          "properties": {
+            "address": {
+              "type": "string",
+              "example": "max.mustermann@agindo-software.de"
+            },
+            "name": { "type": "string", "example": "Max Mustermann" }
+          }
+        },
+        "type": "required"
+      }
+    }
+  }
+}

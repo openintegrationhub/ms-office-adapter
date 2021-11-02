@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "receivedDateTime": {
+            "type": "string",
+            "format": "date",
+            "example": "2019-03-01T11:30:45.0000000"
+          },
+          "sentDateTime": {
+            "type": "string",
+            "format": "date",
+            "example": "2019-03-01T11:30:45.0000000"
+          },
+          "hasAttachments": false,
+          "subject": {
+            "type": "string",
+            "example": "Test email"
+          },
+          "body": {
+            "type": "object",
+            "properties": {
+              "contentType": { "type": "string", "example": "HTML" },
+              "content": { "type": "string", "example": "Lorem ipsum" }
+            }
+          },
+          "bodyPreview": { "type": "string", "example": "Lorem ipsum" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "type": "object",
+  "properties": {
+    "subject": {
+      "type": "string",
+      "example": "Test-Event"
+    },
+    "body": {
+      "type": "object",
+      "properties": {
+        "contentType": {
+          "type": "HTML",
+          "example": "Test-Event"
+        },
+        "content": {
+          "type": "string",
+          "example": "Lorem ipsum."
+        }
+      }
+    },
+    "start": {
+      "type": "object",
+      "properties": {
+        "dateTime": {
+          "type": "string",
+          "format": "date",
+          "example": "2019-03-01T12:00:00"
+        },
+        "timeZone": {
+          "type": "string",
+          "example": "Pacific Standard Time"
+        }
+      }
+    },
+    "end": {
+      "type": "object",
+      "properties": {
+        "dateTime": {
+          "type": "string",
+          "format": "date",
+          "example": "2019-03-01T12:00:00"
+        },
+        "timeZone": {
+          "type": "string",
+          "example": "Pacific Standard Time"
+        }
+      }
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": "string",
+          "example": "agindo GmbH"
+        }
+      }
+    },
+    "attendees": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "emailAddress": {
+            "type": "object",
+            "properties": {
+              "address": {
+                "type": "string",
+                "example": "max.mustermann@agindo-software.de"
+              },
+              "name": { "type": "string", "example": "Max Mustermann" }
+            }
+          },
+          "type": "required"
+        }
+      }
+    }
+  }
+}
