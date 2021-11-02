@@ -40,7 +40,6 @@
       "main": "./lib/triggers/getContacts.js",
       "type": "polling",
       "metadata": {
-        "in": {},
         "out": "./lib/schemas/getContactFolders.out.json"
       }
     },
@@ -49,7 +48,6 @@
       "main": "./lib/triggers/contacts.js",
       "type": "polling",
       "metadata": {
-        "in": {},
         "out": "./lib/schemas/getContacts.out.json"
       }
     },
@@ -58,7 +56,6 @@
       "main": "./lib/triggers/messages.js",
       "type": "polling",
       "metadata": {
-        "in": {},
         "out": "./lib/schemas/getMessages.out.json"
       }
     }
